@@ -6,13 +6,13 @@ public class MortgageCalculator {
 	
 	public static double calculator(double principal, double interestRate, int period) {
 		double mortgage=0;
-		//convert interest into monthly interest rate
-		interestRate/=12;
-		//then convert it into percentage
-		interestRate/=100;
+		final byte months=12;
+		final byte percentRate=100;
+		//convert interest into percentage
+		interestRate/=months*percentRate;
 		
 		//convert period to months
-		period*=12;
+		period*=months;
 		
 		//formula for calculating mortgage
 		double numerator=interestRate*Math.pow(1+interestRate, period);
